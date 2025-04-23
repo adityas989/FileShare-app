@@ -70,7 +70,7 @@ class Module2:
         end_time = time.time()
         elapsed_time = end_time - start_time
 
-        transfer_speed = (total_bytes_received / elapsed_time) / (1024 * 1024)  # in MB/s
+        transfer_speed = (total_bytes_received / (elapsed_time+0.1)) / (1024 * 1024)  # in MB/s
         print("File has been received successfully")
         messagebox.showinfo("Done", f"File {filename1} has been received successfully\nTransfer Speed: {transfer_speed:.2f} MB/second")
         self.on_close()
